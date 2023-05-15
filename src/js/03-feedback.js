@@ -14,15 +14,18 @@ refs.form.addEventListener('input', throttle(onFormInput, 500));
 
 function onFormSubmit(e) {
   e.preventDefault();
+ 
+  if(refs.email.value.length < 5 ){
+    alert("you should to input email")
+  }
+  if(refs.message.value.length < 5 ){
+    alert("you should to input message")
+  }
+  
   e.target.reset();
   localStorage.removeItem(SAVED_KEY);
-  console.log(formData)
-  // if(refs.email.value.length < 5){
-  //   alert("error")
-  // }
-  // if(refs.message.value.length < 5){
-  //   alert("error")
-  // }
+  formData = {}
+  
 }
 
 function onFormInput(e) {
