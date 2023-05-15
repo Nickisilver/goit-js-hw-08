@@ -21,9 +21,10 @@ function onFormSubmit(e) {
   if(refs.message.value.length < 5 ){
     alert("you should to input message")
   }
-  
+
   e.target.reset();
   localStorage.removeItem(SAVED_KEY);
+  console.log(formData)
   formData = {}
   
 }
